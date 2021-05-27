@@ -1,53 +1,24 @@
 # jekyll-perf
 
-# Using Ruby 2.7
-> jekyll build
-done in 0.48 seconds.
+Test the build time of various Ruby runtimes.
 
-# Using JRuby
-> rbenv local jruby-9.2.16.0
-> bundle install
-> jekyll build
-done in 2.516 seconds.
+Each site is an indentical fork of a popular [Jekyll theme](https://mmistakes.github.io/minimal-mistakes/). Each folder has an rbenv set to a different environment and a test script `test.sh` which starts up jekyll and then modifies a 20 times, waiting inbetween.
 
 
-## Using earthly
+```
+bundle exec jekyll clean
+bundle exec jekyll serve --incremental -H 0.0.0.0 -P 4001 &
+```
 
-Using Ruby 2.7
-> jekyll build
- done in 27.771 seconds.
+If you manually add up the generation time should give an idea of Jekyll performance on various runtimes.  
 
-
-## Using Truffle Ruby
- -  Liquid Exception: [{:arg_name=>"filename", :flags=>19, :gtype=>64}] (Array) is not a pointer in /Users/adam/sandbox/earthly-website/blog/_layouts/default.html
-                    ------------------------------------------------
-      Jekyll 4.1.1   Please append `--trace` to the `serve` command 
-                     for any additional information or backtrace. 
-
--- fixed it:
-## first run
-
-37.436 seconds.
-49.774275 seconds
-...done in 26.957384 seconds.
-..done in 24.259713 seconds.
-25 seconds
+The totals from my macbook are [here](https://docs.google.com/spreadsheets/d/1kqmctCjpuWFxcwzvUT3N8Co-3IlcE9lfAEx3RJzwGsA/edit#gid=0)
 
 
-# default run (ruby 2.7.0p0 (2019-12-25 revision 647ee6f091) [x86_64-darwin19])
-# bundle exec jekyll serve --incremental
-20.26 seconds.
-3.01467 seconds.
-8.845289 seconds
-1.099495 seconds
-
-# truffle-dev
-51.984 seconds.
-...done in 53.260928 seconds.
-  ...done in 27.581505 seconds.
-  ...done in 27.521541 seconds.
-  ..done in 28.057539 seconds.
-
-## Truffle Minimal 
-
-[ruby] WARNING: /Users/adam/.rbenv/versions/truffleruby-dev/lib/gems/gems/kramdown-2.3.1/lib/kramdown/parser/kramdown.rb:223: unstable interpolated regexps are not optimized
+| Ruby Version       | Total Time for 20 builds  |
+| ----------- |:-------------:|
+| 2.7     |   33.7 s |
+| JRuby       | 50.5 s     |
+| JRuby --dev     |  52.6 s    |
+| Truffle    |  93.7 s    |
+| Truffle --jvm   |  52.6 s    |
