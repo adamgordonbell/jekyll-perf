@@ -1,7 +1,7 @@
 #!/bin/sh
 
 bundle exec jekyll clean
-bundle exec jekyll serve -H 0.0.0.0 -P 4001 &
+bundle exec jekyll serve --incremental -H 0.0.0.0 -P 4001 &
 sleep 20
 for i in $(seq 1 20)
 do
