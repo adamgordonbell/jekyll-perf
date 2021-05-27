@@ -18,7 +18,13 @@ The totals from my macbook are [here](https://docs.google.com/spreadsheets/d/1kq
 | Ruby Version       | Total Time for 20 builds  |
 | ----------- |:-------------:|
 | 2.7     |   33.7 s |
+| 3.0     |   44.1 s |
 | JRuby       | 50.5 s     |
 | JRuby --dev     |  52.6 s    |
-| Truffle    |  93.7 s    |
 | Truffle --jvm   |  52.6 s    |
+| Truffle    |  82.0 s    |
+
+
+## Changes
+
+Truffle Ruby didn't work with Kramdown, so pandoc is used for markdown in this test. You probably need to install it (`brew install pandoc`) to run these sites.
