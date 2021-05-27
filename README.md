@@ -47,3 +47,7 @@ Using Ruby 2.7
   ...done in 27.581505 seconds.
   ...done in 27.521541 seconds.
   ..done in 28.057539 seconds.
+
+## Truffle Minimal 
+
+[ruby] WARNING: /Users/adam/.rbenv/versions/truffleruby-dev/lib/gems/gems/kramdown-2.3.1/lib/kramdown/parser/kramdown.rb:223: unstable interpolated regexps are not optimized
