@@ -2,7 +2,7 @@
 
 Test the build time of various Ruby runtimes.
 
-Each site is an indentical fork of a popular [Jekyll theme](https://mmistakes.github.io/minimal-mistakes/). Each folder has an rbenv set to a different environment and a test script `test.sh` which starts up jekyll and then modifies a 20 times, waiting inbetween.
+Each site is an indentical fork of a popular [Jekyll theme](https://mmistakes.github.io/minimal-mistakes/). Each folder has an rbenv set to a different environment and a test script `test.sh` which starts up jekyll and then modifies a file 20 times, waiting inbetween.
 
 
 ```
